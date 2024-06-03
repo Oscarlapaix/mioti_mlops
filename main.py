@@ -37,5 +37,5 @@ async def predict(characteristics: Characteristics):
     columns_to_scale=['startYear','runtimeMinutes','age','titleType_encoded','primaryTitle_encoded','genres_encoded','primaryName_encoded','category_encoded']
     init_df[columns_to_scale] = scaler.transform(init_df[columns_to_scale])
     prediction=rf_model.predict(init_df[['startYear','runtimeMinutes','age','titleType_encoded','primaryTitle_encoded','genres_encoded','primaryName_encoded','category_encoded']])
-    return {'Predicted rating': float(prediction)}
+    return {'Predicted Rating': float(prediction)}
     #return init_df.to_dict()
